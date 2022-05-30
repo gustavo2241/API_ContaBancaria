@@ -49,3 +49,18 @@ Mapeamento do banco de dados está no appsettings da aplicação
 <p>
   Conta: Conta que irá ser realizado o processo de busca de saldo.<br />
 </p>
+
+###### SAQUE
+
+- Payload
+```ruby
+{
+  "conta": 0,
+  "valor": 0
+}
+```
+
+<p>
+  Conta: Conta que irá reliazar processo de saque.<br />
+  Valor: Valor a ser sacado
+</p>
