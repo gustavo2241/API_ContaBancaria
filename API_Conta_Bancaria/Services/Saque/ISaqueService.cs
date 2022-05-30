@@ -8,6 +8,6 @@ namespace API_Conta_Bancaria.Services.Saque
 {
     public interface ISaqueService
     {
-        public Task<SaqueModel> Saque(SaqueModel valor);
+        public Task<String> Saque(SaqueModel saque);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using API_Conta_Bancaria.Models;
+using API_Conta_Bancaria.Repository.Saque;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,23 @@ namespace API_Conta_Bancaria.Services.Saque
 {
     public class SaqueService : ISaqueService
     {
-        public Task<SaqueModel> Saque(SaqueModel valor)
+        private readonly ISaqueRepository _repo;
+        public SaqueService(ISaqueRepository repo)
         {
-            throw new NotImplementedException();
+            _repo = repo;
+        }
+        public async Task<String> Saque(SaqueModel saque)
+        {
+            try
+            {
+                await _repo.RealizaSaque(saque);
+
+                return "Saque realizado com sucesso.";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

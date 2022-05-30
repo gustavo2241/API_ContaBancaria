@@ -1,5 +1,6 @@
 using API_Conta_Bancaria.Repository.Deposito;
 using API_Conta_Bancaria.Repository.Extrato;
+using API_Conta_Bancaria.Repository.Saque;
 using API_Conta_Bancaria.Services.Deposito;
 using API_Conta_Bancaria.Services.Extrato;
 using API_Conta_Bancaria.Services.Saque;
@@ -38,6 +39,7 @@ namespace API_Conta_Bancaria
             services.AddScoped<ITransferenciaService, TransferenciaService>();
             services.AddScoped<IDepositoRepository, DepositoRepository>();
             services.AddScoped<IExtratoRepository, ExtratoRepository>();
+            services.AddScoped<ISaqueRepository, SaqueRepository>();
 
             services.AddSingleton<IConfiguration>(provider => Configuration);
 
@@ -48,7 +50,6 @@ namespace API_Conta_Bancaria
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

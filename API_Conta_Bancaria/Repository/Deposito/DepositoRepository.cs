@@ -1,4 +1,5 @@
 ﻿using API_Conta_Bancaria.Models;
+using API_Conta_Bancaria.Utils;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
@@ -25,7 +26,9 @@ namespace API_Conta_Bancaria.Repository.Deposito
                 using (var conn = new MySqlConnection(connection))
                 {
                     conn.Open();
-                    var result = await ValidaConta(valor, conn);
+
+                    var validador = new Validador();
+                    var result = await validador.ValidaConta(valor.Conta, conn);
 
                     if (result.Count() == 0)
                     {
@@ -34,6 +37,8 @@ namespace API_Conta_Bancaria.Repository.Deposito
 
                     var query = "UPDATE tb_conta SET saldo = (saldo + @Valor) WHERE conta = @Conta;";
                     await conn.ExecuteAsync(query, valor);
+
+                    conn.Close();
                 }
             }
             catch (Exception ex)
@@ -41,13 +46,6 @@ namespace API_Conta_Bancaria.Repository.Deposito
                 throw new Exception(ex.Message);
             }
             
-        }
-        private static async Task<IEnumerable<int>> ValidaConta(DepositoModel valor, MySqlConnection conn)
-        {
-            var query = "select * from tb_conta where conta = @Conta";
-            var result = await conn.QueryAsync<int>(query, valor);
-
-            return result;
         }
     }
 }

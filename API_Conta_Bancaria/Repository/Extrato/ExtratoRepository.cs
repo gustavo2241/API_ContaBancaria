@@ -31,6 +31,7 @@ namespace API_Conta_Bancaria.Repository.Extrato
                     throw new Exception("Não foi possível identificar nenhum saldo para a conta informada.");
                 }
 
+                conn.Close();
                 return result;
             }
         }
