@@ -14,6 +14,10 @@ namespace API_Conta_Bancaria.Repository.Deposito
     {
         private readonly IConfiguration _configuration;
 
+        public DepositoRepository()
+        {
+        }
+
         public DepositoRepository(IConfiguration configuration)
         {
             _configuration = configuration;

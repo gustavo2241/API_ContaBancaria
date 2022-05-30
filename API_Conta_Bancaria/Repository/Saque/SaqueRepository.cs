@@ -14,6 +14,9 @@ namespace API_Conta_Bancaria.Repository.Saque
     {
         private readonly IConfiguration _configuration;
 
+        public SaqueRepository()
+        {
+        }
         public SaqueRepository(IConfiguration configuration)
         {
             _configuration = configuration;

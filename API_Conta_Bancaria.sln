@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Conta_Bancaria", "API_Conta_Bancaria\API_Conta_Bancaria.csproj", "{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Conta_Bancaria", "API_Conta_Bancaria\API_Conta_Bancaria.csproj", "{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{BD87F7B0-64FF-4873-BE63-035B260053B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Testes", "2 - Testes", "{857BDD84-3F16-4912-A83D-AE6885979090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Testes", "API_Testes\API_Testes.csproj", "{2303BF0A-D5D9-4E99-BBF8-B24892F406FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2303BF0A-D5D9-4E99-BBF8-B24892F406FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2303BF0A-D5D9-4E99-BBF8-B24892F406FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2303BF0A-D5D9-4E99-BBF8-B24892F406FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2303BF0A-D5D9-4E99-BBF8-B24892F406FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C6E3E7B9-EB6A-46BC-86C1-B656D26C09FB} = {BD87F7B0-64FF-4873-BE63-035B260053B2}
+		{2303BF0A-D5D9-4E99-BBF8-B24892F406FE} = {857BDD84-3F16-4912-A83D-AE6885979090}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EEE4AD0-A2DA-453E-81DE-701FA8C04085}

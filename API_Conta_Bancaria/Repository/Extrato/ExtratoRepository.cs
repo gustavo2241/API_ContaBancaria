@@ -13,6 +13,10 @@ namespace API_Conta_Bancaria.Repository.Extrato
     {
         private readonly IConfiguration _configuration;
 
+        public ExtratoRepository()
+        {
+        }
+
         public ExtratoRepository(IConfiguration configuration)
         {
             _configuration = configuration;
