@@ -9,6 +9,6 @@ namespace API_Conta_Bancaria.Models
     {
         public int ContaOrigem { get; set; }
         public int ContaDestino { get; set; }
-        public int Valor { get; set; }
+        public double Valor { get; set; }
     }
 }

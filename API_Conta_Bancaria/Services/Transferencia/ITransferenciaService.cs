@@ -8,6 +8,6 @@ namespace API_Conta_Bancaria.Services.Transferencia
 {
     public interface ITransferenciaService
     {
-        public Task<TransferenciaModel> Transferencia(TransferenciaModel infos);
+        public Task<String> Transferencia(TransferenciaModel infos);
     }
 }

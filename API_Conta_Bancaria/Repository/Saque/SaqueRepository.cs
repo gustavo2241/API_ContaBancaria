@@ -28,9 +28,7 @@ namespace API_Conta_Bancaria.Repository.Saque
                 var connection = _configuration.GetConnectionString("MySqlConnection");
                 using (var conn = new MySqlConnection(connection))
                 {
-                    conn.Open();
-
-                    await ValidaCobrançaTaxa(saque, conn);
+                    conn.Open();                    
 
                     var validador = new Validador();
                     var result = await validador.ValidaConta(saque.Conta, conn);
@@ -39,6 +37,8 @@ namespace API_Conta_Bancaria.Repository.Saque
                     {
                         throw new Exception("Não foi possível identificar a conta informada.");
                     }
+
+                    await ValidaCobrançaTaxa(saque, conn);
 
                     var query = "UPDATE tb_conta SET saldo = (saldo - @Valor) WHERE conta = @Conta;";
                     await conn.ExecuteAsync(query, saque);

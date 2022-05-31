@@ -2,6 +2,7 @@ using API_Conta_Bancaria.Models;
 using API_Conta_Bancaria.Repository.Deposito;
 using API_Conta_Bancaria.Repository.Extrato;
 using API_Conta_Bancaria.Repository.Saque;
+using API_Conta_Bancaria.Repository.Transferencia;
 using System;
 using Xunit;
 using static API_Conta_Bancaria.Models.ExtratoModel;
@@ -13,6 +14,7 @@ namespace API_Testes
         private readonly ExtratoRepository extrato = new ExtratoRepository();
         private readonly DepositoRepository deposito = new DepositoRepository();
         private readonly SaqueRepository saque = new SaqueRepository();
+        private readonly TransferenciaRepository transferencia = new TransferenciaRepository();
 
         [Fact]
         public void Extrato()
@@ -38,6 +40,16 @@ namespace API_Testes
             conta.Conta = 101;
             conta.Valor = 100;
             var saqueValido = saque.RealizaSaque(conta);
+        }
+
+        [Fact]
+        public void Transferencia()
+        {
+            TransferenciaModel conta = new TransferenciaModel();
+            conta.ContaOrigem = 101;
+            conta.ContaDestino = 102;
+            conta.Valor = 100;
+            var transferenciaValida = transferencia.RealizaTransferencia(conta);
         }
     }
 }
